@@ -16,11 +16,17 @@ public class PlayerSkin : MonoBehaviour
     //==================================================================================================================
     // Base Method   
     //==================================================================================================================
-    
+    int a = 1;
     //Picks a random sprite and attached it to the renderer 
     private void Start()
     {
+        if (a < sprites.Length)
+        { a = a + 1;
+        
+        }
+        else { a = 1; }
         _spriteRenderer = transform.Find("Sprite").GetComponent<SpriteRenderer>();
-        _spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length - 1)];
+        _spriteRenderer.sprite = sprites[a];
+
     }
-}
+     }
